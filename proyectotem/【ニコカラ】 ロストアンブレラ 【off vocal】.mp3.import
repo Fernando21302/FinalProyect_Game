@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gjvgnvp1u884"
+path="res://.godot/imported/【ニコカラ】 ロストアンブレラ 【off vocal】.mp3-373f2e836558fb5896a13478f2d77687.mp3str"
+
+[deps]
+
+source_file="res://【ニコカラ】 ロストアンブレラ 【off vocal】.mp3"
+dest_files=["res://.godot/imported/【ニコカラ】 ロストアンブレラ 【off vocal】.mp3-373f2e836558fb5896a13478f2d77687.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyatr4m1f3lm5"]
+
+[ext_resource type="Script" uid="uid://b07h56212uuae" path="res://plataformalv2.gd" id="1_p8prd"]
+[ext_resource type="Texture2D" uid="uid://c11otbbgivag3" path="res://oak_woods_tileset.png" id="1_uasox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pqi1"]
+size = Vector2(76.5, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jorr5"]
+size = Vector2(76.5, 12)
+
+[node name="plataformalv2_1" type="Area2D"]
+script = ExtResource("1_p8prd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10.5, -6)
+scale = Vector2(0.79, 0.5)
+texture = ExtResource("1_uasox")
+hframes = 5
+vframes = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.25, -11)
+shape = SubResource("RectangleShape2D_5pqi1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-12.25, -6)
+shape = SubResource("RectangleShape2D_jorr5")
+debug_color = Color(0.914066, 0.049227, 0, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

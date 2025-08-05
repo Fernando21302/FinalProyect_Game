@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl1jduslf0w67"]
+
+[ext_resource type="Script" uid="uid://bon2f1kg7agsm" path="res://picos2.gd" id="1_48ay4"]
+[ext_resource type="Texture2D" uid="uid://cejn26coiv2fy" path="res://decorations/spike.png" id="1_rtcu0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5bpw"]
+size = Vector2(14, 5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48ay4"]
+radius = 4.0
+height = 10.0
+
+[node name="picos" type="Area2D"]
+script = ExtResource("1_48ay4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_l5bpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rtcu0")
+region_enabled = true
+region_rect = Rect2(0, 0, 15.3558, 16.3388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_48ay4")

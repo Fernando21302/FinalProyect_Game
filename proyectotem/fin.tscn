@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://djc4kj1c0hwts"]
+
+[sub_resource type="Theme" id="Theme_axsnq"]
+
+[sub_resource type="FontFile" id="FontFile_axsnq"]
+resource_local_to_scene = true
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gwgi"]
+font = SubResource("FontFile_axsnq")
+font_size = 56
+font_color = Color(1, 0, 0.564706, 1)
+shadow_size = 6
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = SubResource("Theme_axsnq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 280.0
+offset_right = 838.0
+offset_bottom = 356.0
+text = "GRACIAS POR JUGAR"
+label_settings = SubResource("LabelSettings_7gwgi")

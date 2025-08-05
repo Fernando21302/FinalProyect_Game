@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://1podpl7j1h83"]
+
+[ext_resource type="Script" uid="uid://b1gtjc0bbmiqc" path="res://static_body_2d.gd" id="1_086ts"]
+[ext_resource type="Texture2D" uid="uid://c11otbbgivag3" path="res://oak_woods_tileset.png" id="2_aoh3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73pp"]
+size = Vector2(48, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoh3q"]
+size = Vector2(48, 24)
+
+[node name="plataforma3" type="Area2D"]
+script = ExtResource("1_086ts")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aoh3q")
+region_enabled = true
+region_rect = Rect2(287.493, 191.114, 48.9796, 26.0698)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_k73pp")
+debug_color = Color(0.937227, 1.67495e-05, 0.628869, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/StaticBody2D"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_aoh3q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

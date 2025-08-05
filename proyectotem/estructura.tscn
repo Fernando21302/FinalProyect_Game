@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnoghnmp53qgp"]
+
+[ext_resource type="Texture2D" uid="uid://c11otbbgivag3" path="res://oak_woods_tileset.png" id="1_tg40o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg40o"]
+size = Vector2(94.2857, 21)
+
+[node name="estructura" type="Sprite2D"]
+position = Vector2(2.5, 0)
+scale = Vector2(1.05, 1)
+texture = ExtResource("1_tg40o")
+hframes = 5
+vframes = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38095, -2)
+shape = SubResource("RectangleShape2D_tg40o")
+debug_color = Color(0.177317, 0.64315, 0, 0.42)
