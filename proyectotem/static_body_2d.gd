@@ -21,12 +21,12 @@ func actualizar_plataforma():
 	# Cambia el color del sprite y activa comportamientos según el tipo de plataforma.
 	match tipo:
 		TipoPlataforma.FIJA:
-			$Sprite2D.modulate = Color.GREEN  # Verde para plataforma fija.
+			$Sprite2D.modulate  # Verde para plataforma fija.
 		TipoPlataforma.OSCILATORIA:
-			$Sprite2D.modulate = Color.BLUE   # Azul para oscilatoria.
+			$Sprite2D.modulate    # Azul para oscilatoria.
 			oscilar()                         # Inicia el movimiento vertical oscilatorio.
 		TipoPlataforma.FRAGIL:
-			$Sprite2D.modulate = Color.RED    # Rojo para plataforma frágil.
+			$Sprite2D.modulate    # Rojo para plataforma frágil.
 		TipoPlataforma.REBOTE:
 			$Sprite2D.modulate = Color.YELLOW # Amarillo para plataforma de rebote.
 

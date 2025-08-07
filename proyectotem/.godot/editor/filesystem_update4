@@ -1,0 +1,8 @@
+res://Fondos.tscn
+res://personaje.tscn
+res://plataforma_3.tscn
+res://static_body_2d.gd
+res://personaje.gd
+res://lv_3.tscn
+res://save_data.gd
+res://save_file.json

@@ -38,6 +38,18 @@ func _physics_process(delta):
 	
 	move_and_slide()  # Mueve el personaje con colisiones y gravedad
 
+func _input(event):
+	if event.is_action_pressed("guardar"):  
+		SaveData.guardar_datos(point, get_tree().current_scene.scene_file_path)
+
+	if event.is_action_pressed("cargar"):  
+		var datos = SaveData.cargar_datos()
+		if "monedas" in datos and "nivel" in datos:
+			point = datos["monedas"]
+			get_node("Camera2D/HUD").update_count(point)
+			get_tree().change_scene_to_file(datos["nivel"])
+
+
 # Reinicia la escena actual si un cuerpo entra en el área de reset (como trampas)
 func _on_reset_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
@@ -58,3 +70,7 @@ func _on_picos_2_body_entered(body: Node2D) -> void:
 # Cambia a la escena "fin" si el personaje entra en la segunda puerta
 func _on_door_2_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://fin.tscn")
+	
+	
+func _on_secret_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://lv_3.tscn")

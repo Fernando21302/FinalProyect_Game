@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://br78kc8h7740f"]
+[gd_scene load_steps=23 format=4 uid="uid://br78kc8h7740f"]
 
 [ext_resource type="Texture2D" uid="uid://jy2xv0vr8631" path="res://background/background_layer_1.png" id="1_6rb6l"]
 [ext_resource type="Texture2D" uid="uid://ddbvkeduwwb1q" path="res://background/background_layer_2.png" id="2_mnxjo"]
@@ -369,6 +369,9 @@ size = Vector2(4320, 74)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m324t"]
 size = Vector2(13, 20.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nw3c"]
+size = Vector2(48.5, 22.5)
+
 [node name="EcenaP" type="Node2D"]
 position = Vector2(0, 888)
 
@@ -495,5 +498,16 @@ autoplay = true
 max_distance = 4096.0
 attenuation = 0.00448711
 
+[node name="plataforma4" parent="." instance=ExtResource("5_ha1qv")]
+position = Vector2(-672, -900)
+tipo = 2
+
+[node name="secret" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="secret"]
+position = Vector2(-672.75, -842.75)
+shape = SubResource("RectangleShape2D_7nw3c")
+
 [connection signal="body_entered" from="reset" to="CharacterBody2D" method="_on_reset_body_entered"]
 [connection signal="body_entered" from="door" to="CharacterBody2D" method="_on_door_body_entered"]
+[connection signal="body_entered" from="secret" to="CharacterBody2D" method="_on_secret_body_entered"]
