@@ -9,6 +9,10 @@ var point = 0         # Contador de puntos o monedas recogidas
 
 func _ready():
 	add_to_group("jugador")  # Añade este nodo al grupo "jugador" para identificarlo fácilmente
+	
+	if Global.cargar_posicion != null:
+		position = Vector2(Global.cargar_posicion["x"], Global.cargar_posicion["y"])
+		Global.cargar_posicion = null
 
 func _physics_process(delta):
 	var direccion = Input.get_axis("ui_left", "ui_right")  # Detecta entrada horizontal (-1 a 1)
@@ -40,13 +44,17 @@ func _physics_process(delta):
 
 func _input(event):
 	if event.is_action_pressed("guardar"):  
-		SaveData.guardar_datos(point, get_tree().current_scene.scene_file_path)
+		SaveData.guardar_datos(point, get_tree().current_scene.scene_file_path, position)
 
 	if event.is_action_pressed("cargar"):  
 		var datos = SaveData.cargar_datos()
 		if "monedas" in datos and "nivel" in datos:
 			point = datos["monedas"]
 			get_node("Camera2D/HUD").update_count(point)
+
+			# Guardamos los datos en una variable global temporal
+			Global.cargar_posicion = datos.get("posicion", null)
+
 			get_tree().change_scene_to_file(datos["nivel"])
 
 

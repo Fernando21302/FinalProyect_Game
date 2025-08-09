@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dyatr4m1f3lm5" path="res://plataformalv2_1.tscn" id="11_32crq"]
 [ext_resource type="Texture2D" uid="uid://cejn26coiv2fy" path="res://decorations/spike.png" id="12_5q5g0"]
 [ext_resource type="PackedScene" uid="uid://dx31a4dvb27te" path="res://coin.tscn" id="13_mri4p"]
-[ext_resource type="Script" path="res://picos_2.gd" id="14_8m2ov"]
+[ext_resource type="Script" uid="uid://bf4w2m8edmhwa" path="res://picos_2.gd" id="14_8m2ov"]
 [ext_resource type="Texture2D" uid="uid://bgam3g588yf6g" path="res://decorations/sign.png" id="15_r88iq"]
 [ext_resource type="AudioStream" uid="uid://gjvgnvp1u884" path="res://【ニコカラ】 ロストアンブレラ 【off vocal】.mp3" id="16_uc1ip"]
 

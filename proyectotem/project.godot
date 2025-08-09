@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveData="*res://save_data.gd"
+Global="*res://global.gd"
+DatosGlobales="*res://datos_globales.gd"
 
 [input]
 

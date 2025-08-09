@@ -1,38 +1,22 @@
 extends Node
 
-const SAVE_PATH := "res://save_file.json"
+var save_path = "user://savegame.save"
 
-var datos_guardados := {
-	"monedas": 0,
-	"nivel": ""
-}
+func guardar_datos(monedas, nivel, posicion):
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	if file:
+		var datos = {
+			"monedas": monedas,
+			"nivel": nivel,
+			"posicion": {"x": posicion.x, "y": posicion.y}
+		}
+		file.store_var(datos)
+		file.close()
 
-func guardar_datos(monedas: int, nivel: String) -> void:
-	datos_guardados["monedas"] = monedas
-	datos_guardados["nivel"] = nivel
-
-	var json_string = JSON.new().stringify(datos_guardados)
-	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	file.store_string(json_string)
-	file.close()
-	print("Juego guardado.")
-
-func cargar_datos() -> Dictionary:
-	if not FileAccess.file_exists(SAVE_PATH):
-		print("No hay archivo de guardado.")
+func cargar_datos():
+	if not FileAccess.file_exists(save_path):
 		return {}
-
-	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
-	var contenido := file.get_as_text()
+	var file = FileAccess.open(save_path, FileAccess.READ)
+	var datos = file.get_var()
 	file.close()
-
-	var json = JSON.new()
-	var error = json.parse(contenido)
-
-	if error != OK:
-		print("Error al convertir JSON.")
-		return {}
-
-	datos_guardados = json.get_data()
-	print("Datos cargados.")
-	return datos_guardados
+	return datos
