@@ -82,3 +82,13 @@ func _on_door_2_body_entered(body: Node2D) -> void:
 	
 func _on_secret_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://lv_3.tscn")
+	
+
+
+
+func _on_door_3_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://lv_2.tscn")
+
+
+func _on_dead_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://lv_3.tscn")

@@ -10,3 +10,5 @@ res://global.gd
 res://coin.gd
 res://datos_globales.gd
 res://hud.gd
+res://static_body_2d.gd
+res://picos2.gd
